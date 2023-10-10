@@ -1,0 +1,119 @@
+Angular Install
+
+node install
+>
+sudo apt-get update
+sudo apt-get install -y ca-certificates curl gnupg
+sudo mkdir -p /etc/apt/keyrings
+curl -fsSL https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key | sudo gpg --dearmor -o /etc/apt/keyrings/nodesource.gpg
+>
+NODE_MAJOR=16
+echo "deb [signed-by=/etc/apt/keyrings/nodesource.gpg] https://deb.nodesource.com/node_$NODE_MAJOR.x nodistro main" | sudo tee /etc/apt/sources.list.d/nodesource.list
+>
+sudo apt-get update
+sudo apt-get install nodejs -y
+
+
+
+
+
+
+if 16 isent installed unistall it
+>
+sudo apt-get remove nodejs
+sudo apt-get remove npm
+sudo apt-get update
+
+node -v
+npm -v
+
+
+
+
+
+
+
+try reinstalling 
+node Install
+>
+sudo apt-get update
+sudo apt-get install -y ca-certificates curl gnupg
+sudo mkdir -p /etc/apt/keyrings
+curl -fsSL https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key | sudo gpg --dearmor -o /etc/apt/keyrings/nodesource.gpg
+>
+NODE_MAJOR=16
+echo "deb [signed-by=/etc/apt/keyrings/nodesource.gpg] https://deb.nodesource.com/node_$NODE_MAJOR.x nodistro main" | sudo tee /etc/apt/sources.list.d/nodesource.list
+>
+sudo apt-get update
+sudo apt-get install nodejs -y
+
+if this happens in the end : 
+--------------------------------------------------------------------------------------------------
+dpkg-deb: error: paste subprocess was killed by signal (Broken pipe)
+Errors were encountered while processing:
+ /var/cache/apt/archives/nodejs_16.20.2-1nodesource1_amd64.deb
+E: Sub-process /usr/bin/dpkg returned an error code (1)
+--------------------------------------------------------------------------------------------------
+
+
+do this :
+>
+sudo dpkg -i --force-overwrite /var/cache/apt/archives/nodejs_16.20.2-1nodesource1_amd64.deb
+>
+node -v
+npm -v
+
+
+
+
+
+
+
+
+angular install:
+>
+sudo npm install npm@latest -g
+sudo npm install -g @angular/cli
+>
+angular -v
+ng new my-app
+
+
+if there is an error doing this then 
+>
+npm uninstall @angular-devkit/build-angular
+npm install --save-dev @angular-devkit/build-angular
+
+
+it should look something like this:
+-----------------------------------------------------------------------------------------
+mathew@mathew-Lenovo-IdeaPad-S340-14IIL:~$ npm uninstall @angular-devkit/build-angular
+
+up to date, audited 1 package in 94ms
+
+found 0 vulnerabilities
+mathew@mathew-Lenovo-IdeaPad-S340-14IIL:~$ npm install --save-dev @angular-devkit/build-angular
+npm WARN deprecated w3c-hr-time@1.0.2: Use your platform's native performance.now() and performance.timeOrigin.
+npm WARN deprecated @babel/plugin-proposal-unicode-property-regex@7.18.6: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-unicode-property-regex instead.
+npm WARN deprecated @wessberg/ts-evaluator@0.0.27: this package has been renamed to ts-evaluator. Please install ts-evaluator instead
+npm WARN deprecated @babel/plugin-proposal-async-generator-functions@7.20.7: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-async-generator-functions instead.
+
+added 735 packages, and audited 736 packages in 41s
+
+97 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+mathew@mathew-Lenovo-IdeaPad-S340-14IIL:~$ 
+----------------------------------------------------------------------------------------
+
+
+Links:
+
+node link
+https://github.com/nodesource/distributions#uninstall-nodejs-ubuntu--debian-packages
+
+angular install link
+https://angular.io/cli
+
+
