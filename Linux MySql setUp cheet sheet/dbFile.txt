@@ -1,0 +1,72 @@
+delete mysql:
+>
+sudo systemctl stop mysql
+sudo apt-get purge mysql-server mysql-client mysql-common mysql-server-core-* mysql-client-core-*
+sudo rm -rf /etc/mysql /var/lib/mysql
+sudo apt autoremove
+sudo apt autoclean
+
+
+
+
+
+
+
+
+Install mysql:
+>
+sudo apt update
+sudo apt-get install mysql-server
+
+The config files are:
+/etc/my.cnf
+/etc/mysql/my.cnf
+/var/lib/mysql/my.cnf
+
+
+
+
+
+
+
+
+to remove the default password and anoing root permission make life simple
+To check the version : 
+>
+mysql - -version 
+To fix Access denied for user ‘root’@‘localhost’
+>
+sudo mysql -u root -p 
+show databases; 
+use mysql 
+update user set plugin='mysql_native_password' where user='root';
+>
+flush privileges; 
+
+Then finally Type :
+>
+mysql -u root -p 
+
+To create database :
+sql> 
+create database demo; 
+
+Check all the available databases : 
+sql>
+show databases;
+
+
+
+
+
+
+
+
+
+Install DBeaver
+Ubuntu PPA:
+You can use PPA repository to easily install/upgrade DBeaver on Debian Linuxes. Mostly it is the same as regular Debian repo but it is hosted on Launchpad.
+>
+sudo add-apt-repository ppa:serge-rider/dbeaver-ce
+sudo apt-get update
+sudo apt-get install dbeaver-ce
